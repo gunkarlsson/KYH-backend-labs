@@ -42,6 +42,9 @@ app.post("/api/:word", (req, res) => {
   });
 });
 
+//-------------------------------- LABB 2 --------------------------------
+const counter = 5;
+
 app.listen(PORT, () => {
   console.log(`Now we're listening at http://localhost:${PORT}`, __dirname);
 });
