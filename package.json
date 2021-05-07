@@ -1,0 +1,15 @@
+{
+  "name": "backend-labs",
+  "version": "1.0.0",
+  "description": "KYH backend labs 2021",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "author": "Gun",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7"
+  }
+}
