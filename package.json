@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
-    "test": "mocha"
+    "test": "mocha test",
+    "coverage": "nyc npm run test"
   },
   "author": "Gun",
   "license": "ISC",
@@ -13,6 +14,7 @@
     "chai": "^4.3.4",
     "express": "^4.17.1",
     "mocha": "^8.4.0",
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.7",
+    "nyc": "^15.1.0"
   }
 }

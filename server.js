@@ -76,6 +76,7 @@ app.listen(PORT, () => {
   console.log(`Now we're listening at http://localhost:${PORT}`, __dirname);
 });
 
+module.exports = app;
 // MISC
 // PUT: calling the same PUT request multiple times will always produce the same result
 //POST: calling a POST request repeatedly have side effects of creating the same resource multiple times.
