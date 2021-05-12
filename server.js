@@ -5,7 +5,7 @@ const app = express();
 
 //Port as a variable, set to 5000
 const PORT = 5000;
-
+app.use(express.json());
 //Importing/declaring path (built in module that gives us access to our files)
 const path = require("path");
 
@@ -22,7 +22,7 @@ app.get("/api/random", (req, res) => {
 
 //---------------- 1B ---------------
 //Write a number of your choice in the URL and receive a random number between 0 and your number
-app.get("/api/custom_random/:num", (req, res) => {
+app.get("/api/random/:num", (req, res) => {
   //Access the URL param value
   let params = req.params;
   //We need specify .num after params to reach the number, otherwise it's a json-object
@@ -31,9 +31,11 @@ app.get("/api/custom_random/:num", (req, res) => {
 });
 
 //---------------- 1C ---------------
-app.post("/api/:word", (req, res) => {
+app.post("/api/word", (req, res) => {
   // Access the word from params
-  const word = req.params.word;
+  console.log(req.body);
+  const word = req.body.word;
+
   // Make word into uppcase
   const lowercase = word.toLowerCase();
   // Check length of the word
