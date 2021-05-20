@@ -4,14 +4,14 @@ const chaiHttp = require("chai-http");
 const { expect } = chai;
 
 chai.use(chaiHttp);
+
 describe("/api/random should return a random number between 0-1023", () => {
-  it("to return a random number between 0-1023 and status to be success", (done) => {
+  it("to return a random number between 0-1023", (done) => {
     chai
       .request(app)
       .get("/api/random")
       .end((err, res) => {
         expect(res).to.have.status(200);
-        expect(res.body.status).to.equals("success");
         expect(res.body.number).to.be.a("number");
         done();
       });
@@ -19,13 +19,12 @@ describe("/api/random should return a random number between 0-1023", () => {
 });
 
 describe("/api/counter should be a string", () => {
-  it("to return the number in counter and status to be success", (done) => {
+  it("to return the number in counter", (done) => {
     chai
       .request(app)
       .get("/api/counter")
       .end((err, res) => {
         expect(res).to.have.status(200);
-        expect(res.body.status).to.equals("success");
         expect(res.body.counter).to.be.a("string");
         done();
       });
@@ -70,7 +69,7 @@ describe("/api/subtract parameters should be numbers", () => {
   });
 });
 
-describe("/api/subtract should subtract -1 to the counter", () => {
+describe("/api/subtract should subtract -1 from the counter", () => {
   it("to subtract one to the number in counter ", (done) => {
     chai
       .request(app)
